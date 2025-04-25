@@ -45,7 +45,7 @@ print(df.info())
 ## 3. Preprocessing (Label Encoding & Split Data)
 Sebelum dipakai untuk training model, data perlu diubah dulu. Kolom-kolom yang masih bertipe objek (string) diubah jadi angka pakai LabelEncoder. Lalu, kita pisahkan antara fitur dan label.
 
-# Encode kolom kategorikal ke angka (kalau ada string)
+<!-- Encode kolom kategorikal ke angka (kalau ada string) -->
 from sklearn.preprocessing import LabelEncoder
 
 le = LabelEncoder()
@@ -53,13 +53,11 @@ for col in df.columns:
     if df[col].dtype == 'object':
         df[col] = le.fit_transform(df[col])
 
-# Pisahkan fitur dan target
-# Ubah sesuai nama kolom target di dataset kamu
 target_column = 'Buys_Computer'  # Ganti kalau berbeda
 X = df.drop(columns=[target_column])
 y = df[target_column]
 
-# Split data
+Split data
 from sklearn.model_selection import train_test_split
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
