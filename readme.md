@@ -53,7 +53,7 @@ for col in df.columns:
     if df[col].dtype == 'object':
         df[col] = le.fit_transform(df[col])
 
-# isahkan fitur dan target
+# Pisahkan fitur dan target
 # Ubah sesuai nama kolom target di dataset kamu
 target_column = 'Buys_Computer'  # Ganti kalau berbeda
 X = df.drop(columns=[target_column])
@@ -63,6 +63,7 @@ y = df[target_column]
 from sklearn.model_selection import train_test_split
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
+---
 
 ## 4. Buat dan Latih Model Decision Tree
 
