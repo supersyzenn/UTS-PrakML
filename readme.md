@@ -46,6 +46,7 @@ print(df.info())
 Sebelum dipakai untuk training model, data perlu diubah dulu. Kolom-kolom yang masih bertipe objek (string) diubah jadi angka pakai LabelEncoder. Lalu, kita pisahkan antara fitur dan label.
 
 <!-- Encode kolom kategorikal ke angka (kalau ada string) -->
+```python
 from sklearn.preprocessing import LabelEncoder
 
 le = LabelEncoder()
@@ -60,7 +61,7 @@ y = df[target_column]
 Split data
 from sklearn.model_selection import train_test_split
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-
+```
 ---
 
 ## 4. Buat dan Latih Model Decision Tree
